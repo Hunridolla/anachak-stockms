@@ -151,6 +151,7 @@
                                 <!-- start widget content -->
                                 <div class="widget-body">
                                     <!-- content here -->
+
                                 </div>
                                 <!-- end widget content -->
                             </div>
@@ -170,11 +171,11 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                 &times;
                             </button>
-                            <h4 class="modal-title" id="modal-label">Fiplus Khmer</h4>
+                            <h4 class="modal-title" id="modal-label">Anachak</h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="table-responsive">
+                                <div class="table-responsive custom-scroll" style="max-height:400px;" > 
                                     <table id="tblVendors" data-target="vendor_id"
                                         class="table table-bordered table-hover">
                                     </table>
@@ -194,7 +195,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                 &times;
                             </button>
-                            <h4 class="modal-title" id="modal-label">Fiplus Khmer</h4>
+                            <h4 class="modal-title" id="modal-label">Anachak</h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -297,7 +298,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                 &times;
                             </button>
-                            <h4 class="modal-title" id="modal-label">Fiplus Khmer</h4>
+                            <h4 class="modal-title" id="modal-label">Anachak</h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -315,6 +316,7 @@
         <!-- END MAIN CONTENT -->
 
     </div>
+
     <!-- END MAIN PANEL -->
     <div id="shortcut">
         <ul>
@@ -414,8 +416,8 @@
 
     <![endif]-->
 
-    <!-- Demo purpose only -->
-    <script src="js/demo.min.js"></script>
+    <!-- Demo purpose only
+    <script src="js/demo.min.js"></script> -->
 
     <!-- MAIN APP JS FILE -->
     <script src="js/app.min.js"></script>
@@ -439,7 +441,7 @@
 
             function closedthis(event) {
                 $.smallBox({
-                    title: "Fiplus Khmer",
+                    title: "Anachak",
                     content: "You have committed successfully!",
                     color: "#739E73",
                     iconSmall: "fa fa-bell-o",
@@ -454,7 +456,18 @@
             { vendor_id: "Vendor ID", vendor_name: "Vendor Name", phone: "Phone", remark: "Remark" },
             { vendor_id: "V-001", vendor_name: "Fiplus Khmer", phone: "012 12 12 12", remark: "123" },
             { vendor_id: "V-002", vendor_name: "Samlanh Finance", phone: "012 13 13 13", remark: "123" },
-            { vendor_id: "V-003", vendor_name: "Blue Finance", phone: "012 13 13 13", remark: "123" }
+            { vendor_id: "V-003", vendor_name: "Blue Finance", phone: "012 13 13 13", remark: "123" },
+            { vendor_id: "V-004", vendor_name: "Fiplus Khmer", phone: "012 12 12 12", remark: "123" },
+            { vendor_id: "V-005", vendor_name: "Samlanh Finance", phone: "012 13 13 13", remark: "123" },
+            { vendor_id: "V-006", vendor_name: "Blue Finance", phone: "012 13 13 13", remark: "123" },
+            { vendor_id: "V-007", vendor_name: "Fiplus Khmer", phone: "012 12 12 12", remark: "123" },
+            { vendor_id: "V-009", vendor_name: "Samlanh Finance", phone: "012 13 13 13", remark: "123" },
+            { vendor_id: "V-010", vendor_name: "Blue Finance", phone: "012 13 13 13", remark: "123" },
+            { vendor_id: "V-011", vendor_name: "Fiplus Khmer", phone: "012 12 12 12", remark: "123" },
+            { vendor_id: "V-012", vendor_name: "Samlanh Finance", phone: "012 13 13 13", remark: "123" },
+            { vendor_id: "V-013", vendor_name: "Blue Finance", phone: "012 13 13 13", remark: "123" },
+            { vendor_id: "V-014", vendor_name: "Fiplus Khmer", phone: "012 12 12 12", remark: "123" },
+            { vendor_id: "V-015", vendor_name: "Samlanh Finance", phone: "012 13 13 13", remark: "123" }
         ];
         var customer_data = [
             { customer_id: "Customer ID", customer_name: "Customer Name", gender: "Gender", phone: "Phone", remark: "Remark" },
