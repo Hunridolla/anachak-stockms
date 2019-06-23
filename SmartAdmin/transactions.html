@@ -87,6 +87,7 @@
                 </a>
             </span>
         </div>
+
         <!-- end user info -->
         <nav>
             <ul>
@@ -99,10 +100,16 @@
                             class="menu-item-parent">Stocks</span></a>
                     <ul>
                         <li class="active menu">
-                            <a data-target="FRM-001">Create Invoice</a>
+                            <a data-target="FRM-001">Catagories</a>
                         </li>
                         <li class="menu">
-                            <a data-target="FRM-002">Create Catagory</a>
+                            <a data-target="FRM-002">Vendor Types</a>
+                        </li>
+                        <li class="menu">
+                            <a data-target="FRM-003">Items</a>
+                        </li>
+                        <li class="menu">
+                            <a data-target="FRM-004">Vendors</a>
                         </li>
                     </ul>
                 </li>
@@ -148,12 +155,13 @@
                                     <input class="form-control" type="text">
                                 </div>
                                 <!-- end widget edit box -->
+
                                 <!-- start widget content -->
                                 <div class="widget-body">
                                     <!-- content here -->
-
                                 </div>
                                 <!-- end widget content -->
+                                
                             </div>
                             <!-- end widget div -->
                         </div>
@@ -175,7 +183,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="table-responsive custom-scroll" style="max-height:400px;" > 
+                                <div class="table-responsive custom-scroll" style="max-height:400px;"> 
                                     <table id="tblVendors" data-target="vendor_id"
                                         class="table table-bordered table-hover">
                                     </table>
@@ -199,7 +207,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="table-responsive">
+                                <div class="table-responsive custom-scroll" style="max-height:400px;">
                                     <table id="tblCustomers" data-target="customer_id"
                                         class="table table-bordered table-hover">
                                     </table>
@@ -473,7 +481,20 @@
             { customer_id: "Customer ID", customer_name: "Customer Name", gender: "Gender", phone: "Phone", remark: "Remark" },
             { customer_id: "C-001", customer_name: "Soy Hunridolla", gender: "Male", phone: "012 12 12 12", remark: "123" },
             { customer_id: "C-002", customer_name: "Khin Phorn", gender: "Female", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-003", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" }
+            { customer_id: "C-003", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
+            { customer_id: "C-004", customer_name: "Soy Hunridolla", gender: "Male", phone: "012 12 12 12", remark: "123" },
+            { customer_id: "C-005", customer_name: "Khin Phorn", gender: "Female", phone: "012 13 13 13", remark: "123" },
+            { customer_id: "C-006", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
+            { customer_id: "C-007", customer_name: "Soy Hunridolla", gender: "Male", phone: "012 12 12 12", remark: "123" },
+            { customer_id: "C-008", customer_name: "Khin Phorn", gender: "Female", phone: "012 13 13 13", remark: "123" },
+            { customer_id: "C-009", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
+            { customer_id: "C-010", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
+            { customer_id: "C-011", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
+            { customer_id: "C-012", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
+            { customer_id: "C-013", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
+            { customer_id: "C-014", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
+            { customer_id: "C-015", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" }
+
         ];
         var item_data = [
             { item_id: "Item ID", item_name: "Item Name", cost: "Cost", sale_price: "Sale Price", min_balance: "Min Balance", max_balance: "Max Balance", inactive: "Inactive", action: "Action" },
@@ -528,7 +549,6 @@
             $('#' + current_modal + '').modal('toggle');
         });
     </script>
-
 </body>
 
 </html>
