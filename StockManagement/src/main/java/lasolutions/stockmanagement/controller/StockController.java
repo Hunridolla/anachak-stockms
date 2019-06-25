@@ -27,4 +27,10 @@ public class StockController {
         modelAndView.setViewName("_blank");
         return modelAndView;
     }
+    @RequestMapping(value = "/transactions")
+    public ModelAndView transactions() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("transactions");
+        return modelAndView;
+    }
 }

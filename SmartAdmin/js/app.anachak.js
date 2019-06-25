@@ -63,43 +63,11 @@ function get_from_controls(form_id) {
     return ctrl_list;
 }
 function get_control(control_id,caption){
-    var txtID = "<div class=\"row\">" +
-                    "<div class=\"col-sm-4\" style=\"margin-top: 10px\">" +
-                        "<div class=\"input-group\">" +
-                            "<div class=\"input-group-btn\" style=\"min-width: 120px;\">" +
-                                "<label class=\"form-control ctl_label\">" + caption + "\:</label>" +
-                            "</div>" +
-                            "<input class=\"form-control ctl_textbox\" type=\"text\" value=\"\">" +
-                        "</div>" +
-                    "</div>" +
-                "</div>";
-
-    var txt = "<div class=\"col-sm-6\" style=\"margin-top: 10px\">" +
-                    "<div class=\"input-group\">" +
-                        "<div class=\"input-group-btn\" style=\"min-width: 120px;\">" +
-                            "<label class=\"form-control ctl_label\">" + caption + "\:" +
-                            "</label>" +
-                        "</div>" +
-                        "<input class=\"form-control ctl_textbox\" type=\"text\" value=\"\">" +
-                    "</div>" +
-                "</div>";
-
-    var bit = "<div class=\"row\">" +
-                    "<div class=\"col-sm-4\">" +
-                        "<div class=\"input-group\">" +
-                            "<div class=\"checkbox\">" +
-                                "<label>" +
-                                    "<input type=\"checkbox\" class=\"checkbox style-0\">" +
-                                    "<span>" + caption + "</span>" +
-                                "</label>" +
-                            "</div>" +
-                        "</div>" +
-                    "</div>" +
-                "</div>";
+    
     var list ="<div class=\"col-sm-6\" style=\"margin-top: 10px;\">" +
                     "<div id=\"customer_id\" class=\"input-group\">" +
                         "<div class=\"input-group-btn\">" +
-                            "<label class=\"form-control ctl_label cLabel\"> Customer: " + "</label>" +
+                            "<label class=\"form-control ctl_label cLabel\"> ||caption|| " + "</label>" +
                         "</div>" +
                         "<input class=\"form-control ctl_textbox cCode\" type=\"text\" value=\"\">" +
                         "<div class=\"input-group-btn\">" +
@@ -114,6 +82,8 @@ function get_control(control_id,caption){
                         "</div>" +
                     "</div>" +
                 "</div>";
+    txtID = txtID.replace("||caption||",caption);
+
     if (control_id === "txtID") {
         return txtID;
     } else if (control_id === "txt"){
@@ -124,3 +94,8 @@ function get_control(control_id,caption){
         return list;
     }
 }
+
+
+$(document).on("click", "#btn-new-item", function (event) {
+    get_control("txtID","NEW");
+});

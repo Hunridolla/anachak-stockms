@@ -9,12 +9,10 @@ import java.util.List;
 public interface CategoryRepository extends JpaRepository<CategoryModel, String> {
 
     String getCategories = "SELECT category_id, category_name, remark, inactive FROM tbl_categories";
-
     @Query(value = getCategories, nativeQuery = true)
     List<CategoryModel> getCategories();
 
     String getCategoryById = "SELECT category_id, category_name, remark, inactive FROM tbl_categories WHERE category_id= :category_id";
-
     @Query(value = getCategoryById, nativeQuery = true)
     CategoryModel getCategoryById(@Param("category_id") String category_id);
 
