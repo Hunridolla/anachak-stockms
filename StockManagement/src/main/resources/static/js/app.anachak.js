@@ -27,53 +27,33 @@ $(document).ready(function () {
 
 
     function get_from_controls(form_id) {
-
-        var forms_controls = [
-            {
-                form_id: "FRM-001",
-                control_id: "CTR-001",
-                control_name: "Category ID",
-                control_type: "txtID",
-                modal_target_id: "",
-                ord: 1
-            },
-            {
-                form_id: "FRM-001",
-                control_id: "CTR-002",
-                control_name: "Category Name",
-                control_type: "txt",
-                modal_target_id: "",
-                ord: 2
-            },
-            {
-                form_id: "FRM-001",
-                control_id: "CTR-002",
-                control_name: "Remark",
-                control_type: "txt",
-                modal_target_id: "",
-                ord: 3
-            },
-            {
-                form_id: "FRM-001",
-                control_id: "CTR-003",
-                control_name: "Inactive",
-                control_type: "bit",
-                modal_target_id: "",
-                ord: 4
-            }
-        ];
+        var forms_controls = "";
         var ctrl_list = "";
-        $.each(forms_controls, function (index, object) {
-            if (index === 0 || index === forms_controls.length - 1) {
-                ctrl_list += get_control(object.control_type, object.control_name);
-            } else if ((index % 2) > 0 && index > 0) {
-                ctrl_list += "<div class=\"row\">" + get_control(object.control_type, object.control_name);
-            } else if ((index % 2) == 0 && index > 0) {
-                ctrl_list += get_control(object.control_type, object.control_name) + "</div>";
-            } else {
-                ctrl_list += get_control(object.control_type, object.control_name);
+        var href = "/form-controls/get/" + form_id;
+
+        $.ajax({
+            async: false,
+            type: "GET",
+            url: href,
+            success: function (data) {
+                // control_html = data["control_html"];
+                $.each(data, function (index, object) {
+                    if (index === 0 || index === data.length - 1) {
+                        ctrl_list += get_control(object.control_type, object.control_name);
+                    } else if ((index % 2) > 0 && index > 0) {
+                        ctrl_list += "<div class=\"row\">" + get_control(object.control_type, object.control_name);
+                    } else if ((index % 2) == 0 && index > 0) {
+                        ctrl_list += get_control(object.control_type, object.control_name) + "</div>";
+                    } else {
+                        ctrl_list += get_control(object.control_type, object.control_name);
+                    }
+                });
+            },
+            error: function (event) {
+                alert("no controls!" + event);
             }
         });
+
         return ctrl_list;
     }
 
@@ -89,7 +69,7 @@ $(document).ready(function () {
                 control_html = control_html.replace("||caption||",caption);
             },
             error: function (event) {
-                alert("no form!");
+                alert("no form!" + event);
             }
         });
         return control_html;

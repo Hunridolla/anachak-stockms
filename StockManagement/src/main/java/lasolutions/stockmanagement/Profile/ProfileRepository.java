@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface ProfileRepository extends JpaRepository<ProfileModel, String> {
     String getProfiles = "SELECT profile_id, profile_name, remark, inactive FROM sys_profiles";
-
     @Query(value = getProfiles, nativeQuery = true)
     List<ProfileModel> getProfiles();
 
