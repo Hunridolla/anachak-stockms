@@ -29,7 +29,7 @@ public class FormControlModel {
     private String modal_target_id;
 
     @Column(name = "ord")
-    private String ord;
+    private int ord;
 
     public FormControlModel(){
 
@@ -83,11 +83,11 @@ public class FormControlModel {
         this.modal_target_id = modal_target_id;
     }
 
-    public String getOrd() {
+    public int getOrd() {
         return ord;
     }
 
-    public void setOrd(String ord) {
+    public void setOrd(int ord) {
         this.ord = ord;
     }
 }

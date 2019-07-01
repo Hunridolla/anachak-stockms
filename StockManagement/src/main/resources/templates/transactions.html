@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
     <meta charset="utf-8">
@@ -144,10 +143,8 @@
             <section id="widget-grid">
                 <div class="row">
                     <article class="col-sm-12 col-md-12 col-lg-12">
-                        <div class="jarviswidget" id="wid-id-0" 
-                            data-widget-colorbutton="false" 
-                            data-widget-editbutton="false"
-                            data-widget-togglebutton="false">
+                        <div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false"
+                            data-widget-editbutton="false" data-widget-togglebutton="false">
                             <header>
                                 <span class="widget-icon"> <i class="fa fa-pencil-square-o"></i> </span>
                                 <h2>Form Name</h2>
@@ -165,7 +162,7 @@
                                     <!-- content here -->
                                 </div>
                                 <!-- end widget content -->
-                                
+
                             </div>
                             <!-- end widget div -->
                         </div>
@@ -174,53 +171,6 @@
             </section>
             <!-- end widget grid -->
 
-            <!-- Vendor Modal -->
-            <div class="modal" id="find-vendor-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                &times;
-                            </button>
-                            <h4 class="modal-title" id="modal-label">Anachak</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="table-responsive custom-scroll" style="max-height:400px;"> 
-                                    <table id="tblVendors" data-target="vendor_id"
-                                        class="table table-bordered table-hover">
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
-
-            <!-- Customer Modal -->
-            <div class="modal" id="find-customer-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                &times;
-                            </button>
-                            <h4 class="modal-title" id="modal-label">Anachak</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="table-responsive custom-scroll" style="max-height:400px;">
-                                    <table id="tblCustomers" data-target="customer_id"
-                                        class="table table-bordered table-hover">
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
 
             <!-- Find Item Modal -->
             <div class="modal fade" id="find-item-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
@@ -316,6 +266,30 @@
                             <div class="row">
                                 <div class="table-responsive">
                                     <table id="tblListing" class="table table-bordered table-hover">
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+            <!-- Golbal Modal -->
+            <div class="modal global-modal" id="global-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="modal-label">Anachak</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="table-responsive custom-scroll" style="max-height:400px;">
+                                    <table id="tblglobal" data-target="golbal-data-target" class="table table-bordered table-hover tblglobal">
                                     </table>
                                 </div>
                             </div>
@@ -481,44 +455,21 @@
             { vendor_id: "V-014", vendor_name: "Fiplus Khmer", phone: "012 12 12 12", remark: "123" },
             { vendor_id: "V-015", vendor_name: "Samlanh Finance", phone: "012 13 13 13", remark: "123" }
         ];
-        var customer_data = [
-            { customer_id: "Customer ID", customer_name: "Customer Name", gender: "Gender", phone: "Phone", remark: "Remark" },
-            { customer_id: "C-001", customer_name: "Soy Hunridolla", gender: "Male", phone: "012 12 12 12", remark: "123" },
-            { customer_id: "C-002", customer_name: "Khin Phorn", gender: "Female", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-003", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-004", customer_name: "Soy Hunridolla", gender: "Male", phone: "012 12 12 12", remark: "123" },
-            { customer_id: "C-005", customer_name: "Khin Phorn", gender: "Female", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-006", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-007", customer_name: "Soy Hunridolla", gender: "Male", phone: "012 12 12 12", remark: "123" },
-            { customer_id: "C-008", customer_name: "Khin Phorn", gender: "Female", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-009", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-010", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-011", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-012", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-013", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-014", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" },
-            { customer_id: "C-015", customer_name: "Sok DaraVisal", gender: "Male", phone: "012 13 13 13", remark: "123" }
 
-        ];
-        var item_data = [
-            { item_id: "Item ID", item_name: "Item Name", cost: "Cost", sale_price: "Sale Price", min_balance: "Min Balance", max_balance: "Max Balance", inactive: "Inactive", action: "Action" },
-            { item_id: "I-0001", item_name: "Macbook Pro 2012 13\"", cost: "1,500.00$", sale_price: "1,600.00$", min_balance: "2", max_balance: "20", inactive: "<span class=\"label label-success\">active</span>", action: "<a href=\"create-item.html\" class=\"btn btn-xs btn-primary\">EDIT</a>" },
-            { item_id: "I-0002", item_name: "Surface 4 14\"", cost: "850.00$", sale_price: "1,000.00$", min_balance: "2", max_balance: "20", inactive: "<span class=\"label label-success\">active</span>", action: "<a href=\"create-item.html\" class=\"btn btn-xs btn-primary\">EDIT</a>" },
-            { item_id: "I-0003", item_name: "iPhone X MAX", cost: "650.00$", sale_price: "700.00$", min_balance: "2", max_balance: "20", inactive: "<span class=\"label label-success\">active</span>", action: "<a href=\"create-item.html\" class=\"btn btn-xs btn-primary\">EDIT</a>" }
-        ];
 
-        $(document).on("click", "#btnVendor", function (event) {
-            load_modal_data("#btnVendor", "#tblVendors", vendor_data);
+        $(document).on("click", ".cButton", function (event) {
+            var control_id = this.id;
+            var data_target  = $(this).data("target");
+                data_target =  data_target.replace("#", "");
+            change_modal_info(control_id,data_target);
+            load_modal_data("#" + control_id + "", "#" + "tbl" + control_id + "", vendor_data);
         });
 
-        $(document).on("click", "#btnCustomer", function (event) {
-            load_modal_data("#btnCustomer", "#tblCustomers", customer_data);
-        });
-
-        $(document).on("click", "#btnFind", function (event) {
-            load_modal_data("#btnFind", "#tblListing", item_data);
-        });
-
+        function change_modal_info(control_id,data_target) {
+            $(".global-modal").attr("id",data_target);
+            $(".tblglobal").attr("id","tbl" + control_id);
+            $(".tblglobal").attr("data-target",control_id.substr(control_id.length - 9));
+        }
 
         function load_modal_data(button_id, table_id, modal_data) {
             $(table_id).html('');

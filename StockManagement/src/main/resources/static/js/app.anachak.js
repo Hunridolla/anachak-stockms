@@ -39,13 +39,13 @@ $(document).ready(function () {
                 // control_html = data["control_html"];
                 $.each(data, function (index, object) {
                     if (index === 0 || index === data.length - 1) {
-                        ctrl_list += get_control(object.control_type, object.control_name);
+                        ctrl_list += get_control(object.control_id, object.control_type, object.control_name, object.modal_target_id);
                     } else if ((index % 2) > 0 && index > 0) {
-                        ctrl_list += "<div class=\"row\">" + get_control(object.control_type, object.control_name);
+                        ctrl_list += "<div class=\"row\">" + get_control(object.control_id, object.control_type, object.control_name, object.modal_target_id);
                     } else if ((index % 2) == 0 && index > 0) {
-                        ctrl_list += get_control(object.control_type, object.control_name) + "</div>";
+                        ctrl_list += get_control(object.control_id, object.control_type, object.control_name, object.modal_target_id) + "</div>";
                     } else {
-                        ctrl_list += get_control(object.control_type, object.control_name);
+                        ctrl_list += get_control(object.control_id, object.control_type, object.control_name, object.modal_target_id);
                     }
                 });
             },
@@ -57,7 +57,7 @@ $(document).ready(function () {
         return ctrl_list;
     }
 
-    function get_control(control_type_id, caption) {
+    function get_control(control_id, control_type_id, caption, modal_target_id) {
         var href = "/controls/get/" + control_type_id;
         var control_html = null;
         $.ajax({
@@ -67,6 +67,9 @@ $(document).ready(function () {
             success: function (data) {
                 control_html = data["control_html"];
                 control_html = control_html.replace("||caption||",caption);
+                control_html = control_html.replace("||modal-target-id||", "#" + modal_target_id);
+                control_html = control_html.replace("||control-button||", "b" + control_id);
+                control_html = control_html.replace("||control-id||", control_id);
             },
             error: function (event) {
                 alert("no form!" + event);

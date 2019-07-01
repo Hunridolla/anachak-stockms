@@ -31,8 +31,8 @@ public class FormControlController {
     @RequestMapping(value = "/form-controls/get/{form_id}", method = RequestMethod.GET)
     @ResponseBody
     public List<FormControlModel> getFormControls(@PathVariable("form_id") String form_id){
+        System.out.print(form_id);
         List<FormControlModel> formControlModels = formControlRepository.getFormControlById(form_id);
-        System.out.print(formControlModels.toString());
         return formControlModels;
     }
 }
